@@ -8,13 +8,23 @@ type Provider = {
   type: string;
   signinUrl: string;
   callbackUrl: string;
-  signinUrlParams: Record<string, string> | null;
+  signinUrlParams?: Record<string, string> | null;
 };
 
 type Providers = Record<string, Provider>;
 
 const AuthProviders = () => {
   const [providers, setProviders] = useState<Providers | null>(null);
+
+  useEffect(() => {
+    const fetchProviders = async () => {
+      const res = await getProviders();
+
+      setProviders(res);
+    };
+
+    fetchProviders();
+  }, []);
 
   if (providers) {
     return (
