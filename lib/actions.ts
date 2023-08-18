@@ -81,7 +81,7 @@ export const createNewProject = async (
       input: {
         ...form,
         image: imageUrl.url,
-        createBy: {
+        createdBy: {
           link: creatorId,
         },
       },

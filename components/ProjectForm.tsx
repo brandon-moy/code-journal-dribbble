@@ -1,7 +1,7 @@
 "use client";
 import { SessionInterface } from "@/common.types";
 import { useRouter } from "next/navigation";
-import { ChangeEvent, useReducer, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import Image from "next/image";
 import FormField from "./FormField";
 import { categoryFilters } from "@/constants";
@@ -30,7 +30,7 @@ const ProjectForm = ({ type, session }: Props) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const token = await fetchToken();
+    const { token } = await fetchToken();
 
     try {
       if (type === "create") {
@@ -49,7 +49,7 @@ const ProjectForm = ({ type, session }: Props) => {
     const file = e.target.files?.[0];
     if (!file) return;
     if (!file.type.includes("image"))
-      return alert("Please uplaod an image file");
+      return alert("Please upload an image file");
 
     const reader = new FileReader();
     reader.readAsDataURL(file);
