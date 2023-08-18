@@ -17,13 +17,29 @@ const ProjectForm = ({ type, session }: Props) => {
     title: "",
     description: "",
     image: "",
-    liveSitUrl: "",
+    liveSiteUrl: "",
     githubUrl: "",
     category: "",
   });
 
   const handleFormSubmit = (e: React.FormEvent) => {};
-  const handleChangeImage = (e: ChangeEvent<HTMLInputElement>) => {};
+
+  const handleChangeImage = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (!file.type.includes("image"))
+      return alert("Please uplaod an image file");
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = () => {
+      const result = reader.result as string;
+      handleStateChange("image", result);
+    };
+  };
+
   const handleStateChange = (fieldName: string, value: string) => {
     setform((prevState) => ({
       ...prevState,
@@ -76,7 +92,7 @@ const ProjectForm = ({ type, session }: Props) => {
       <FormField
         type="url"
         title="GitHub Url"
-        state={form.githubURL}
+        state={form.githubUrl}
         placeholder="https://github.com/brandon-moy"
         setState={(value) => handleStateChange("githubUrl", value)}
       />
