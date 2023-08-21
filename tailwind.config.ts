@@ -19,7 +19,7 @@ const config: Config = {
         gray: "#4D4A4A",
         "gray-100": "#3D3D4E",
         "black-100": "#252525",
-        "primary-purple": "#9747FF",
+        "primary-purple": "#562b81",
         "gray-50": "#D9D9D9",
       },
       boxShadow: {
