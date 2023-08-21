@@ -8,12 +8,17 @@ import ProfileMenu from "./ProfileMenu";
 const Navbar = async () => {
   const session = await getCurrentUser();
   return (
-    <nav className="flexBetween navbar">
+    <nav className="flexBetween navbar bg-primary-purple">
       <div className="flex-1 flexStart gap-10">
         <Link href="/">
-          <Image src="/logo.svg" width={115} height={43} alt="CodeJournal" />
+          <Image
+            src="/logo-white.svg"
+            width={115}
+            height={43}
+            alt="CodeJournal"
+          />
         </Link>
-        <ul className="xl:flex hidden text-small gap-7">
+        <ul className="xl:flex hidden text-small text-white gap-7">
           {NavLinks.map((link) => (
             <Link href={link.href} key={link.key}>
               {link.text}
@@ -26,7 +31,9 @@ const Navbar = async () => {
           <>
             <ProfileMenu session={session} />
 
-            <Link href="/create-project">Share Work</Link>
+            <Link href="/create-project" className="text-white">
+              Share Work
+            </Link>
           </>
         ) : (
           <AuthProviders />
