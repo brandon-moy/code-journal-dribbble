@@ -10,6 +10,7 @@ import {
   projectCountQuery,
   projectsQuery,
   updateProjectMutation,
+  updateUserMutation,
 } from "@/graphql";
 import { GraphQLClient } from "graphql-request";
 
@@ -187,5 +188,5 @@ export const updateUser = async (
     input: updatedUser,
   };
 
-  return makeGraphQLRequest(updateProjectMutation, variables);
+  return makeGraphQLRequest(updateUserMutation, variables);
 };

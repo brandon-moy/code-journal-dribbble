@@ -155,8 +155,8 @@ export const getProjectsOfUserQuery = `
 `;
 
 export const updateUserMutation = `
-mutation UserUpdate($id: ID!, $user: UserUpdateInput!) {
-  userUpdate(by: { id: $id }, input: $user) {
+mutation UserUpdate($id: ID!, $input: UserUpdateInput!) {
+  userUpdate(by: { id: $id }, input: $input) {
     user {
       name
       email

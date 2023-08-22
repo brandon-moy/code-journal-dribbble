@@ -1,8 +1,6 @@
 import { UserProfile } from "@/common.types";
-// import ProfilePage from "@/components/ProfilePage";
 import SettingsForm from "@/components/SettingsForm";
 import { getUserProjects } from "@/lib/actions";
-import { getCurrentUser } from "@/lib/session";
 
 type Props = {
   params: {
@@ -11,7 +9,6 @@ type Props = {
 };
 
 const UserSettings = async ({ params }: Props) => {
-  const session = await getCurrentUser();
   const result = (await getUserProjects(params.id, 100)) as {
     user: UserProfile;
   };
@@ -20,7 +17,11 @@ const UserSettings = async ({ params }: Props) => {
     return <p className="no-result-text">Failed to fetch user info</p>;
   }
 
-  return <SettingsForm user={result?.user} session={session} />;
+  return (
+    <div className="paddings">
+      <SettingsForm user={result?.user} />;
+    </div>
+  );
 };
 
 export default UserSettings;

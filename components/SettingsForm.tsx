@@ -9,10 +9,9 @@ import { fetchToken, updateUser } from "@/lib/actions";
 
 type Props = {
   user: UserProfile;
-  session: SessionInterface;
 };
 
-const SettingsForm = ({ user, session }: Props) => {
+const SettingsForm = ({ user }: Props) => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [userInfo, setUserInfo] = useState({
@@ -31,7 +30,7 @@ const SettingsForm = ({ user, session }: Props) => {
     const { token } = await fetchToken();
 
     try {
-      await updateUser(userInfo, session?.user?.id, token);
+      await updateUser(userInfo, user.id, token);
       router.push("/");
     } catch (error) {
       console.log(error);
@@ -52,7 +51,7 @@ const SettingsForm = ({ user, session }: Props) => {
 
     reader.onload = () => {
       const result = reader.result as string;
-      handleStateChange("image", result);
+      handleStateChange("avatarUrl", result);
     };
   };
 
@@ -78,7 +77,7 @@ const SettingsForm = ({ user, session }: Props) => {
         />
         {user.avatarUrl && (
           <Image
-            src={user.avatarUrl}
+            src={userInfo.avatarUrl}
             className="sm:p-10 object-contain z-20"
             alt="project poster"
             fill
@@ -87,22 +86,22 @@ const SettingsForm = ({ user, session }: Props) => {
       </div>
       <FormField
         title="Description"
-        state={user.description || ""}
-        placeholder={user.description || "Software Developer"}
+        state={userInfo.description}
+        placeholder={userInfo.description || "Software Developer"}
         setState={(value) => handleStateChange("description", value)}
       />
       <FormField
         type="url"
         title="GitHub Url"
-        state={user.githubUrl || ""}
-        placeholder={user.githubUrl || "https://github.com/. . ."}
+        state={userInfo.githubUrl}
+        placeholder={userInfo.githubUrl || "https://github.com/..."}
         setState={(value) => handleStateChange("githubUrl", value)}
       />
       <FormField
         type="url"
         title="LinkedIn URL"
-        state={user.linkedinUrl || ""}
-        placeholder={user.linkedinUrl || "htts://www.linkedin.com/in/. . ."}
+        state={userInfo.linkedinUrl}
+        placeholder={userInfo.linkedinUrl || "https://www.linkedin.com/in/..."}
         setState={(value) => handleStateChange("linkedinUrl", value)}
       />
       <div className="flexStart w-full">
