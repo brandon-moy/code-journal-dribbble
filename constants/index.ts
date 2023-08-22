@@ -2,8 +2,8 @@ export const NavLinks = [
   { href: "/", key: "Inspiration", text: "Inspiration" },
   { href: "/", key: "Find Projects", text: "Find Projects" },
   { href: "/", key: "Learn Development", text: "Learn Development" },
-  { href: "/", key: "Career Advancement", text: "Career Advancement" },
-  { href: "/", key: "Hire Developers", text: "Hire Developers" },
+  // { href: "/", key: "Career Advancement", text: "Career Advancement" },
+  // { href: "/", key: "Hire Developers", text: "Hire Developers" },
 ];
 
 export const categoryFilters = [
@@ -26,12 +26,12 @@ export const footerLinks = [
   {
     title: "For developers",
     links: [
-      "Go Pro!",
+      // "Go Pro!",
       "Explore development work",
-      "Development blog",
-      "Code podcast",
-      "Open-source projects",
-      "Refer a Friend",
+      // "Development blog",
+      "Code podcasts",
+      // "Open-source projects",
+      // "Refer a Friend",
       "Code of conduct",
     ],
   },
@@ -80,15 +80,15 @@ export const footerLinks = [
       "Packagephobia",
     ],
   },
-  {
-    title: "Development Resources",
-    links: [
-      "Freelancing",
-      "Development Hiring",
-      "Development Portfolio",
-      "Development Education",
-      "Creative Process",
-      "Development Industry Trends",
-    ],
-  },
+  // {
+  //   title: "Development Resources",
+  //   links: [
+  //     "Freelancing",
+  //     "Development Hiring",
+  //     "Development Portfolio",
+  //     "Development Education",
+  //     "Creative Process",
+  //     "Development Industry Trends",
+  //   ],
+  // },
 ];
