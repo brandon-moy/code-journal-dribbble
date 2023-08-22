@@ -269,3 +269,84 @@ export const practiceResources = [
       "CSS code golf. A fun way to practice CSS by being presented with something to recreate using HTML and CSS.",
   },
 ];
+
+export const beginnerProjects = [
+  {
+    title: "Calculator",
+    imageUrl: "/calculator.jpg",
+    description:
+      "Build a working calculator with HTML, CSS, and JavaScript! Try to style it as close to an actual calculator as possible and allow users to click the buttons to use it.",
+  },
+  {
+    title: "Weight Converter",
+    imageUrl: "/scale.jpg",
+    description:
+      "Create an application where users input a weight and can choose the input and output weight.",
+  },
+  {
+    title: "Memory Game",
+    imageUrl: "/memory-game.jpg",
+    description:
+      "Create a memory game application where users have a timer to try and flip and match a set of cards. Add in CSS transitions/animations for a more natural feel.",
+  },
+  {
+    title: "Rock, Paper, Scissors",
+    imageUrl: "/rock-paper-scissors.jpg",
+    description:
+      "Create an application where users select rock, paper, or scissors. You need to have a way to automate choosing one of the three options and then determine who the winner is.",
+  },
+];
+
+export const intermediateProjects = [
+  {
+    title: "To-Do App",
+    imageUrl: "/todos.jpg",
+    description:
+      "The classic to-do CRUD app. User should be able to Create, Read, Update, and Delete to-do items in a list.",
+  },
+  {
+    title: "Flexbox Teacher",
+    imageUrl: "/flexbox.png",
+    description:
+      "Create a front-end application to help users learn and practice Flexbox.",
+  },
+  {
+    title: "Typing Tutor/Racer",
+    imageUrl: "/typing.jpg",
+    description:
+      "Create an application that takes in user key inputs. There should be a phrase on screen for users to type and it should be the correct input before moving forward. Implement a mode that times how long it takes and return the typer's words per minute.",
+  },
+];
+
+export const advancedProjects = [
+  {
+    title: "Solar System",
+    imageUrl: "/solar-system.jpg",
+    description:
+      "Create a full-stack application to teach the users about the planets in the solar system.",
+  },
+  {
+    title: "Flash cards",
+    imageUrl: "/flashcards.jpg",
+    description:
+      "Combine to-do CRUD operations with memory game animations to create a flash card studying app. Make this full stack by incorporating user accounts to store separate sets of flashcards and a feature to flip through the cards to study.",
+  },
+  {
+    title: "eCommerce site",
+    imageUrl: "/ecommerce.jpg",
+    description:
+      "Create an eCommerce site that can actually take in user payments using the Stripe API.",
+  },
+  {
+    title: "Travel App",
+    imageUrl: "/travel.jpg",
+    description:
+      "Create an application to help plan travelling! It can be used to show locations using GoogleMaps API, or get the data such as National Parks if users want to search an area.",
+  },
+  {
+    title: "Discord Bot",
+    imageUrl: "/discord.jpg",
+    description:
+      "Create a bot that works on Discord, additional features up to you! You can listen for commands to return messages, play music, or run events as example.",
+  },
+];
