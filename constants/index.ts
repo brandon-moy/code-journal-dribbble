@@ -32,7 +32,7 @@ export const footerLinks = [
       { title: "Code podcasts", url: "/podcasts" },
       // "Open-source projects",
       // "Refer a Friend",
-      { title: "Code of conduct", url: "/" },
+      { title: "Code of conduct", url: "/code-of-conduct" },
       { title: "Lorem Ipsum Dolor", url: "/lorem-ipsum-dolor" },
     ],
   },
