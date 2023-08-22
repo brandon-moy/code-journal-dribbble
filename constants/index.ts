@@ -1,7 +1,7 @@
 export const NavLinks = [
   { href: "/", key: "Inspiration", text: "Inspiration" },
   { href: "/", key: "Find Projects", text: "Find Projects" },
-  { href: "/", key: "Learn Development", text: "Learn Development" },
+  { href: "/learn", key: "Learn Development", text: "Learn Development" },
   // { href: "/", key: "Career Advancement", text: "Career Advancement" },
   // { href: "/", key: "Hire Developers", text: "Hire Developers" },
 ];
@@ -167,5 +167,92 @@ export const podcasts = [
     url: "https://www.frontendhappyhour.com/",
     description:
       "A podcast featuring a panel of Software Engineers from Netflix, Evernote, Atlassian & LinkedIn talking over drinks about all things Front End development.",
+  },
+];
+
+export const learningResources = [
+  {
+    title: "freeCodeCamp",
+    url: "https://www.freecodecamp.org",
+    imageUrl: "/freecodecamp.png",
+    description:
+      "Their mission: to help people learn to code for free. They accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. They also have thousands of freeCodeCamp study groups around the world.",
+  },
+  {
+    title: "Scrimba",
+    url: "https://scrimba.com",
+    imageUrl: "/scrimba.png",
+    description: `Scrimba's goal is to create the best possible coding school at
+    the lowest possible cost for students. If we succeed with this,
+    it'll give anyone who wants to become a software developer a
+    realistic shot at succeeding, regardless of where they live or the
+    size of their wallets.`,
+  },
+  {
+    title: "Codecademy",
+    url: "https://www.codecademy.com/",
+    imageUrl: "/codecademy.webp",
+    description: `Codecademy, from Skillsoft, is the easiest way to learn to code.
+    Since pioneering online coding education in 2011, we’ve helped over
+    50 million learners develop new careers, new passions, new projects,
+    and a new lease on life. They have courses in 12 different
+    programming languages and both free and paid courses. You can take
+    some of the paid courses but will have limited lessons and practice
+    without their Pro subscription.`,
+  },
+  {
+    title: "The Odin Project",
+    url: "https://theodinproject.com",
+    imageUrl: "/odin-project.png",
+    description: `The Odin Project is one of those "What I wish I had when I was
+    learning" resources. Not everyone has access to a computer
+    science education or the funds to attend an intensive coding school
+    and neither of those is right for everyone anyway. This project is
+    designed to fill in the gap for people who are trying to hack it on
+    their own but still want a high quality education.`,
+  },
+];
+
+export const practiceResources = [
+  {
+    title: "leetCode",
+    url: "https://leetcode.com",
+    imageUrl: "/leetcode.png",
+    description:
+      "Probably the most well known site for practicing algorithmns and data structures. A free service but has premium options showing video solutions, questions most used by popular companies, debugger, and more.",
+  },
+  {
+    title: "CodeSignal",
+    url: "https://codesignal.com",
+    imageUrl: "/code-signal.png",
+    description:
+      "Another good site for practicing algorithmns. The difficulty curve here comes and goes in waves so you may have a streak or easy problems before getting stuck on a couple of difficult ones.",
+  },
+  {
+    title: "CSS Diner",
+    url: "https://flukeout.github.io/",
+    imageUrl: "/css-diner.png",
+    description: "A game to practice using different types of CSS selectors.",
+  },
+  {
+    title: "Flexbox Froggy",
+    url: "https://flexboxfroggy.com/",
+    imageUrl: "/flexbox-froggy.png",
+    description:
+      "Learn CSS Flexbox by helping frogs get back to their lilypads.",
+  },
+  {
+    title: "Grid Garden",
+    url: "https://cssgridgarden.com/",
+    imageUrl: "/grid-garden.png",
+    description:
+      "Learn CSS Grid by taking care of a garden. Made by Codepip who created Flexbox Froggy",
+  },
+  {
+    title: "CSS Battle",
+    url: "https://cssbattle.dev/",
+    imageUrl: "/css-battle.png",
+    description:
+      "CSS code golf. A fun way to practice CSS by being presented with something to recreate using HTML and CSS.",
   },
 ];
