@@ -27,57 +27,63 @@ export const footerLinks = [
     title: "For developers",
     links: [
       // "Go Pro!",
-      "Explore development work",
+      { title: "Explore development work", url: "/" },
       // "Development blog",
-      "Code podcasts",
+      { title: "Code podcasts", url: "/" },
       // "Open-source projects",
       // "Refer a Friend",
-      "Code of conduct",
+      { title: "Code of conduct", url: "/" },
     ],
   },
-  {
-    title: "Hire developers",
-    links: [
-      "Post a job opening",
-      "Post a freelance project",
-      "Search for developers",
-    ],
-  },
-  {
-    title: "Brands",
-    links: ["Advertise with us"],
-  },
-  {
-    title: "Company",
-    links: [
-      "About",
-      "Careers",
-      "Support",
-      "Media kit",
-      "Testimonials",
-      "API",
-      "Terms of service",
-      "Privacy policy",
-      "Cookie policy",
-    ],
-  },
-  {
-    title: "Directories",
-    links: [
-      "Development jobs",
-      "Developers for hire",
-      "Freelance developers for hire",
-      "Tags",
-      "Places",
-    ],
-  },
+  // {
+  //   title: "Hire developers",
+  //   links: [
+  //     "Post a job opening",
+  //     "Post a freelance project",
+  //     "Search for developers",
+  //   ],
+  // },
+  // {
+  //   title: "Brands",
+  //   links: ["Advertise with us"],
+  // },
+  // {
+  //   title: "Company",
+  //   links: [
+  //     "About",
+  //     "Careers",
+  //     "Support",
+  //     "Media kit",
+  //     "Testimonials",
+  //     "API",
+  //     "Terms of service",
+  //     "Privacy policy",
+  //     "Cookie policy",
+  //   ],
+  // },
+  // {
+  //   title: "Directories",
+  //   links: [
+  //     "Development jobs",
+  //     "Developers for hire",
+  //     "Freelance developers for hire",
+  //     "Tags",
+  //     "Places",
+  //   ],
+  // },
   {
     title: "Development assets",
     links: [
-      "Code Marketplace",
-      "GitHub Marketplace",
-      "NPM Registry",
-      "Packagephobia",
+      {
+        title: "Code Marketplace",
+        url: "https://marketplace.visualstudio.com/vscode",
+      },
+      {
+        title: "GitHub Marketplace",
+        url: "https://github.com/marketplace?type=",
+      },
+      { title: "NPM Registry", url: "https://www.npmjs.com/" },
+      { title: "Packagephobia", url: "https://packagephobia.com/" },
     ],
   },
   // {
