@@ -37,7 +37,7 @@ const ProjectCard = ({ id, image, title, name, avatarUrl, userId }: Props) => {
               src={avatarUrl}
               width={24}
               height={24}
-              className="rounded-full"
+              className="rounded-full w-[24px] h-[24px]"
               alt="Profil Image"
             />
             <p>{name}</p>

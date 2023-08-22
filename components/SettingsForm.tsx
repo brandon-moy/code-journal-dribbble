@@ -1,5 +1,5 @@
 "use client";
-import { SessionInterface, UserProfile } from "@/common.types";
+import { UserProfile } from "@/common.types";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 import Image from "next/image";
@@ -65,8 +65,11 @@ const SettingsForm = ({ user }: Props) => {
   return (
     <form onSubmit={handleFormSubmit} className="flexStart form">
       <div className="flexStart form_image-container">
-        <label htmlFor="poster" className="flexCenter form_image-label">
-          {!user.avatarUrl && "Choose a poster for your project"}
+        <label
+          htmlFor="poster"
+          className="flexCenter form_image-label min-h-[200px] md:min-h-[400px]"
+        >
+          {!user.avatarUrl && "Choose a image for your profile"}
         </label>
         <input
           id="image"
