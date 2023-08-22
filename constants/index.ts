@@ -1,5 +1,5 @@
 export const NavLinks = [
-  { href: "/", key: "Inspiration", text: "Inspiration" },
+  { href: "/project-ideas", key: "Project Ideas", text: "Project Ideas" },
   { href: "/", key: "Find Projects", text: "Find Projects" },
   { href: "/learn", key: "Learn Development", text: "Learn Development" },
   // { href: "/", key: "Career Advancement", text: "Career Advancement" },
@@ -33,6 +33,7 @@ export const footerLinks = [
       // "Open-source projects",
       // "Refer a Friend",
       { title: "Code of conduct", url: "/" },
+      { title: "Lorem Ipsum Dolor", url: "/lorem-ipsum-dolor" },
     ],
   },
   // {
