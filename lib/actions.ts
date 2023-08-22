@@ -1,4 +1,4 @@
-import { ProjectForm } from "@/common.types";
+import { ProjectForm, UserForm } from "@/common.types";
 import { categoryFilters } from "@/constants";
 import {
   createProjectMutation,
@@ -153,6 +153,38 @@ export const updateProject = async (
   const variables = {
     id: projectId,
     input: updatedForm,
+  };
+
+  return makeGraphQLRequest(updateProjectMutation, variables);
+};
+
+export const updateUser = async (
+  user: UserForm,
+  userId: string,
+  token: string
+) => {
+  function isBase64DataURL(value: string) {
+    const base64Regex = /^data:image\/[a-z]+;base64,/;
+    return base64Regex.test(value);
+  }
+
+  let updatedUser = { ...user };
+
+  const isUploadingNewImage = isBase64DataURL(user.avatarUrl);
+
+  if (isUploadingNewImage) {
+    const imageUrl = await uploadImage(user.avatarUrl);
+
+    if (imageUrl.url) {
+      updatedUser = { ...updatedUser, avatarUrl: imageUrl.url };
+    }
+  }
+
+  client.setHeader("Authorization", `Bearer ${token}`);
+
+  const variables = {
+    id: userId,
+    input: updatedUser,
   };
 
   return makeGraphQLRequest(updateProjectMutation, variables);

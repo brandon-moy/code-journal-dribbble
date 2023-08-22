@@ -67,7 +67,7 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
               </Menu.Item>
               <Menu.Item>
                 <Link
-                  href={`/profile/${session?.user?.id}`}
+                  href={`/settings/${session?.user?.id}`}
                   className="text-sm"
                 >
                   Settings
