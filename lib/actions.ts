@@ -7,6 +7,7 @@ import {
   getProjectByIdQuery,
   getProjectsOfUserQuery,
   getUserQuery,
+  projectCountQuery,
   projectsQuery,
   updateProjectMutation,
 } from "@/graphql";
@@ -103,6 +104,11 @@ export const fetchAllProjects = (
   client.setHeader("x-api-key", apiKey);
   const categories = category == null ? categoryFilters : [category];
   return makeGraphQLRequest(projectsQuery, { categories, endcursor });
+};
+
+export const fetchProjectCount = () => {
+  client.setHeader("x-api-key", apiKey);
+  return makeGraphQLRequest(projectCountQuery);
 };
 
 export const getProjectDetails = (id: string) => {

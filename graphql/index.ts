@@ -54,9 +54,22 @@ export const createUserMutation = `
 	}
 `;
 
+export const projectCountQuery = `
+  query Project {
+    projectSearch(first: 1) {
+      searchInfo {
+        totalHits
+      }
+    }
+  }
+`;
+
 export const projectsQuery = `
   query getProjects($categories: [String!], $endcursor: String) {
     projectSearch(first: 8, after: $endcursor, filter:  {category: {in: $categories}}) {
+      searchInfo {
+        totalHits
+      }
       pageInfo {
         hasNextPage
         hasPreviousPage

@@ -1,6 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { footerLinks } from "@/constants";
+import { fetchProjectCount } from "@/lib/actions";
+
+type ProjectSearch = {
+  projectSearch: {
+    searchInfo: {
+      totalHits: number;
+    };
+  };
+};
 
 type ColumnProps = {
   title: string;
@@ -20,7 +29,10 @@ const FooterColumn = ({ title, links }: ColumnProps) => (
   </div>
 );
 
-const Footer = () => {
+const Footer = async () => {
+  const data = (await fetchProjectCount()) as ProjectSearch;
+  const projectsCount = data?.projectSearch?.searchInfo?.totalHits || 0;
+
   return (
     <footer className="flexStart footer">
       <div className="flex flex-col gap-12 w-full">
@@ -69,7 +81,7 @@ const Footer = () => {
       <div className="flexBetween footer_copyright">
         <p>@2023 CodeJournal. All rights reserved</p>
         <p className="text-gray">
-          <span className="text-black font-semibold">0 </span>
+          <span className="text-black font-semibold">{projectsCount} </span>
           projects submitted
         </p>
       </div>
