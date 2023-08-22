@@ -13,7 +13,7 @@ const PodcastList = () => {
             >
               {podcast.title}
             </Link>
-            <p>{podcast.description}</p>
+            <p className="pt-2">{podcast.description}</p>
           </li>
         ))}
       </ul>
