@@ -103,68 +103,80 @@ export const podcasts = [
   {
     title: "Pocket Casts",
     url: "https://pocketcasts.com/",
+    imageUrl: "/pocket-casts.webp",
     description:
       "The world's most powerful podcast platform, now available for free. iOS and Android.",
   },
   {
     title: "Overcast",
     url: "https://overcast.fm/",
+    imageUrl: "/overcast.jpg",
     description:
       "Free, simple, award-winning podcast player for iPhone, iPad, and Apple Watch. iOS.",
   },
   {
     title: "Software Engineering Daily",
     url: "https://softwareengineeringdaily.com/",
+    imageUrl: "/software-engineering-daily.webp",
     description: "The World Through the Lens of Software",
   },
   {
     title: "The Changelog",
     url: "https://changelog.com/podcast",
+    imageUrl: "/the-changelog.webp",
     description:
       "Conversations with the hackers, leaders, and innovators of software development.",
   },
   {
     title: "Syntax",
     url: "https://syntax.fm/",
+    imageUrl: "/syntax.png",
     description: "A Tasty Treats Podcast for Web Developers.",
   },
   {
     title: "Corecursive",
     url: "https://corecursive.com/",
+    imageUrl: "/corecursive.png",
     description: "Learn from software development experts.",
   },
   {
     title: "Command Line Heroes",
     url: "https://www.redhat.com/en/command-line-heroes",
+    imageUrl: "/command-line-heroes.png",
     description:
       "An original podcast about the people who transform technology from the command line up.",
   },
   {
     title: "The Bikeshed",
     url: "https://www.bikeshed.fm/",
+    imageUrl: "/the-bike-shed.png",
     description:
       "On The Bike Shed, hosts Chris Toomey & Steph Viccari discuss their development experience and challenges at thoughtbot with Ruby, Rails, JavaScript, and whatever else is drawing their attention, admiration, or ire this week.",
   },
   {
     title: "JS Party",
     url: "https://changelog.com/jsparty",
+    imageUrl: "/js-party.webp",
     description: "A community celebration of JavaScript and the web.",
   },
   {
     title: "Soft Skills Engineering",
     url: "https://softskills.audio/",
+    imageUrl: "/soft-skills-engineering.webp",
     description:
       "Soft Skills Engineering is a weekly advice podcast for software developers. We answer questions about all the stuff you didn't realize you needed to know about being an engineer.",
   },
   {
     title: "Shop Talk Show",
     url: "https://shoptalkshow.com/",
+    imageUrl: "/shoptalk.png",
     description:
       "A podcast about building websites starring Dave Rupert and Chris Coyier. Development, design, performance, accessibility, tooling, a little bit of everything!",
   },
   {
     title: "Front End Happy Hour",
     url: "https://www.frontendhappyhour.com/",
+    imageUrl: "/front-end-happy-hour.png",
     description:
       "A podcast featuring a panel of Software Engineers from Netflix, Evernote, Atlassian & LinkedIn talking over drinks about all things Front End development.",
   },
