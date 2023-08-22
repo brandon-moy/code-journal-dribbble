@@ -7,6 +7,7 @@ import FormField from "./FormField";
 import { categoryFilters } from "@/constants";
 import CustomMenu from "./CustomMenu";
 import Button from "./Button";
+import LoadingSpinner from "./LoadingSpinner";
 import { createNewProject, fetchToken, updateProject } from "@/lib/actions";
 
 type Props = {
@@ -74,73 +75,76 @@ const ProjectForm = ({ type, session, project }: Props) => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit} className="flexStart form">
-      <div className="flexStart form_image-container">
-        <label htmlFor="poster" className="flexCenter form_image-label">
-          {!form.image && "Choose a poster for your project"}
-        </label>
-        <input
-          id="image"
-          type="file"
-          accept="image/*"
-          required={type === "create"}
-          className="form_image-input"
-          onChange={handleChangeImage}
-        />
-        {form.image && (
-          <Image
-            src={form?.image}
-            className="sm:p-10 object-contain z-20"
-            alt="project poster"
-            fill
+    <>
+      {isSubmitting && <LoadingSpinner />}
+      <form onSubmit={handleFormSubmit} className="flexStart form">
+        <div className="flexStart form_image-container">
+          <label htmlFor="poster" className="flexCenter form_image-label">
+            {!form.image && "Choose a poster for your project"}
+          </label>
+          <input
+            id="image"
+            type="file"
+            accept="image/*"
+            required={type === "create"}
+            className="form_image-input"
+            onChange={handleChangeImage}
           />
-        )}
-      </div>
-      <FormField
-        title="Title"
-        state={form.title}
-        placeholder="CodeJournal"
-        setState={(value) => handleStateChange("title", value)}
-      />
-      <FormField
-        title="Description"
-        state={form.description}
-        placeholder="Showcase beautiful projects."
-        setState={(value) => handleStateChange("description", value)}
-      />
-      <FormField
-        type="url"
-        title="Website URL"
-        state={form.liveSiteUrl}
-        placeholder="https://brandonmoy.com"
-        setState={(value) => handleStateChange("liveSiteUrl", value)}
-      />
-      <FormField
-        type="url"
-        title="GitHub Url"
-        state={form.githubUrl}
-        placeholder="https://github.com/brandon-moy"
-        setState={(value) => handleStateChange("githubUrl", value)}
-      />
-      <CustomMenu
-        title="Category"
-        state={form.category}
-        filters={categoryFilters}
-        setState={(value) => handleStateChange("category", value)}
-      />
-      <div className="flexStart w-full">
-        <Button
-          title={
-            isSubmitting
-              ? `${type === "create" ? "Creating" : "Editing"}`
-              : `${type === "create" ? "Create" : "Edit"}`
-          }
-          type="submit"
-          leftIcon={isSubmitting ? "" : "/plus.svg"}
-          isSubmitting={isSubmitting}
+          {form.image && (
+            <Image
+              src={form?.image}
+              className="sm:p-10 object-contain z-20"
+              alt="project poster"
+              fill
+            />
+          )}
+        </div>
+        <FormField
+          title="Title"
+          state={form.title}
+          placeholder="CodeJournal"
+          setState={(value) => handleStateChange("title", value)}
         />
-      </div>
-    </form>
+        <FormField
+          title="Description"
+          state={form.description}
+          placeholder="Showcase beautiful projects."
+          setState={(value) => handleStateChange("description", value)}
+        />
+        <FormField
+          type="url"
+          title="Website URL"
+          state={form.liveSiteUrl}
+          placeholder="https://brandonmoy.com"
+          setState={(value) => handleStateChange("liveSiteUrl", value)}
+        />
+        <FormField
+          type="url"
+          title="GitHub Url"
+          state={form.githubUrl}
+          placeholder="https://github.com/brandon-moy"
+          setState={(value) => handleStateChange("githubUrl", value)}
+        />
+        <CustomMenu
+          title="Category"
+          state={form.category}
+          filters={categoryFilters}
+          setState={(value) => handleStateChange("category", value)}
+        />
+        <div className="flexStart w-full">
+          <Button
+            title={
+              isSubmitting
+                ? `${type === "create" ? "Creating" : "Editing"}`
+                : `${type === "create" ? "Create" : "Edit"}`
+            }
+            type="submit"
+            leftIcon={isSubmitting ? "" : "/plus.svg"}
+            isSubmitting={isSubmitting}
+          />
+        </div>
+      </form>
+    </>
   );
 };
 

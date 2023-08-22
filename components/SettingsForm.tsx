@@ -6,6 +6,7 @@ import Image from "next/image";
 import FormField from "./FormField";
 import Button from "./Button";
 import { fetchToken, updateUser } from "@/lib/actions";
+import LoadingSpinner from "./LoadingSpinner";
 
 type Props = {
   user: UserProfile;
@@ -63,59 +64,64 @@ const SettingsForm = ({ user }: Props) => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit} className="flexStart form">
-      <div className="flexStart form_image-container">
-        <label
-          htmlFor="poster"
-          className="flexCenter form_image-label min-h-[200px] md:min-h-[400px]"
-        >
-          {!user.avatarUrl && "Choose a image for your profile"}
-        </label>
-        <input
-          id="image"
-          type="file"
-          accept="image/*"
-          className="form_image-input"
-          onChange={handleChangeImage}
-        />
-        {user.avatarUrl && (
-          <Image
-            src={userInfo.avatarUrl}
-            className="sm:p-10 object-contain z-20"
-            alt="project poster"
-            fill
+    <>
+      {isSubmitting && <LoadingSpinner />}
+      <form onSubmit={handleFormSubmit} className="flexStart form">
+        <div className="flexStart form_image-container">
+          <label
+            htmlFor="poster"
+            className="flexCenter form_image-label min-h-[200px] md:min-h-[400px]"
+          >
+            {!user.avatarUrl && "Choose a image for your profile"}
+          </label>
+          <input
+            id="image"
+            type="file"
+            accept="image/*"
+            className="form_image-input"
+            onChange={handleChangeImage}
           />
-        )}
-      </div>
-      <FormField
-        title="Description"
-        state={userInfo.description}
-        placeholder={userInfo.description || "Software Developer"}
-        setState={(value) => handleStateChange("description", value)}
-      />
-      <FormField
-        type="url"
-        title="GitHub Url"
-        state={userInfo.githubUrl}
-        placeholder={userInfo.githubUrl || "https://github.com/..."}
-        setState={(value) => handleStateChange("githubUrl", value)}
-      />
-      <FormField
-        type="url"
-        title="LinkedIn URL"
-        state={userInfo.linkedinUrl}
-        placeholder={userInfo.linkedinUrl || "https://www.linkedin.com/in/..."}
-        setState={(value) => handleStateChange("linkedinUrl", value)}
-      />
-      <div className="flexStart w-full">
-        <Button
-          title="Update Settings"
-          type="submit"
-          leftIcon={isSubmitting ? "" : "/plus.svg"}
-          isSubmitting={isSubmitting}
+          {user.avatarUrl && (
+            <Image
+              src={userInfo.avatarUrl}
+              className="sm:p-10 object-contain z-20"
+              alt="project poster"
+              fill
+            />
+          )}
+        </div>
+        <FormField
+          title="Description"
+          state={userInfo.description}
+          placeholder={userInfo.description || "Software Developer"}
+          setState={(value) => handleStateChange("description", value)}
         />
-      </div>
-    </form>
+        <FormField
+          type="url"
+          title="GitHub Url"
+          state={userInfo.githubUrl}
+          placeholder={userInfo.githubUrl || "https://github.com/..."}
+          setState={(value) => handleStateChange("githubUrl", value)}
+        />
+        <FormField
+          type="url"
+          title="LinkedIn URL"
+          state={userInfo.linkedinUrl}
+          placeholder={
+            userInfo.linkedinUrl || "https://www.linkedin.com/in/..."
+          }
+          setState={(value) => handleStateChange("linkedinUrl", value)}
+        />
+        <div className="flexStart w-full">
+          <Button
+            title="Update Settings"
+            type="submit"
+            leftIcon={isSubmitting ? "" : "/plus.svg"}
+            isSubmitting={isSubmitting}
+          />
+        </div>
+      </form>
+    </>
   );
 };
 
