@@ -4,11 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import DeleteModal from "./DeleteModal";
 import LoadingSpinner from "./LoadingSpinner";
 
-const ProjectActions = ({ projectId }: { projectId: string }) => {
+const ProjectActions = ({
+  projectId,
+  title,
+}: {
+  projectId: string;
+  title: string;
+}) => {
   const router = useRouter();
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
+  const [confirmingDelete, setConfirmingDelete] = useState<boolean>(false);
+  const cancelDelete = () => {
+    setConfirmingDelete(false);
+  };
   const handleDeleteProject = async () => {
     setIsDeleting(true);
     const { token } = await fetchToken();
@@ -26,6 +37,13 @@ const ProjectActions = ({ projectId }: { projectId: string }) => {
   return (
     <>
       {isDeleting && <LoadingSpinner />}
+      {confirmingDelete && (
+        <DeleteModal
+          confirmDelete={handleDeleteProject}
+          cancelDelete={cancelDelete}
+          title={title}
+        />
+      )}
       <Link
         href={`/edit-project/${projectId}`}
         className="flexCenter edit-action_btn"
@@ -34,7 +52,7 @@ const ProjectActions = ({ projectId }: { projectId: string }) => {
       </Link>
       <button
         type="button"
-        onClick={handleDeleteProject}
+        onClick={() => setConfirmingDelete(true)}
         className={`flexCenter delete-action_btn ${
           isDeleting ? "bg-gray" : "bg-primary-purple"
         }`}

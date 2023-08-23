@@ -21,8 +21,8 @@ const ProfilePage = ({ user }: Props) => {
             className="rounded-full w-20 h-20"
             alt="user image"
           />
-          <p className="text-4xl font-bold mt-10">{user?.name}</p>
-          <p className="md:text-5xl text-3xl font-extrabold md:mt-10 mt-5 max-w-lg">
+          <p className="text-4xl font-bold mt-10 font-opensans">{user?.name}</p>
+          <p className="md:text-5xl text-3xl font-extrabold font-opensans md:mt-10 mt-5 max-w-lg">
             {user?.description}
           </p>
 
@@ -73,7 +73,9 @@ const ProfilePage = ({ user }: Props) => {
       </section>
 
       <section className="flexStart flex-col lg:mt-28 mt-16 w-full">
-        <p className="w-full text-left text-lg font-semibold">Recent Work</p>
+        <p className="w-full text-left text-lg font-semibold font-opensans">
+          Recent Work
+        </p>
 
         <div className="profile_projects">
           {user?.projects?.edges?.map(

@@ -2,7 +2,7 @@ import React from "react";
 
 const LoremIpsumDolor = () => {
   return (
-    <section className="flex-start flex-col paddings mb-16">
+    <section className="flex-start flex-col paddings mb-16 font-opensans">
       <p className="text-4xl font-semibold">
         Lorem Ipsum Dolor
         <span className="text-sm font-semibold">(intentional)</span>

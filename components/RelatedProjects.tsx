@@ -19,7 +19,9 @@ const RelatedProjects = async ({ userId, projectId }: Props) => {
   return (
     <section className="flex flex-col mt-32 w-full">
       <div className="flexBetween">
-        <p className="text-base font-bold">More by {result?.user?.name}</p>
+        <p className="text-base font-bold font-opensans">
+          More by {result?.user?.name}
+        </p>
         <Link
           href={`/profile/${result?.user?.id}`}
           className="text-primary-purple text-base"

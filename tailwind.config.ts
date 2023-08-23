@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        opensans: "Open Sans",
+      },
       colors: {
         "nav-border": "#EBEAEA",
         "light-white": "#FAFAFB",

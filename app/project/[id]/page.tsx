@@ -30,12 +30,12 @@ const Project = async ({ params: { id } }: { params: { id: string } }) => {
               width={50}
               height={50}
               alt="profile"
-              className="rounded-full"
+              className="rounded-full w-[50px] h-[50px]"
             />
           </Link>
 
           <div className="flex-1 flexStart flex-col gap-1">
-            <p className="self-start text-lg font-semibold">
+            <p className="self-start text-lg font-semibold font-opensans">
               {projectDetails?.title}
             </p>
             <div className="user-info">
@@ -52,7 +52,10 @@ const Project = async ({ params: { id } }: { params: { id: string } }) => {
         </div>
         {session?.user?.email === projectDetails?.createdBy?.email && (
           <div className="flex justify-end items-center gap-2">
-            <ProjectActions projectId={projectDetails?.id} />
+            <ProjectActions
+              projectId={projectDetails?.id}
+              title={projectDetails?.title}
+            />
           </div>
         )}
       </section>
@@ -68,7 +71,7 @@ const Project = async ({ params: { id } }: { params: { id: string } }) => {
       </section>
 
       <section className="flexCenter flex-col mt-20">
-        <p className="max-w-5xl text-xl font-normal">
+        <p className="max-w-5xl text-xl font-normal font-opensans">
           {projectDetails?.description}
         </p>
 
@@ -98,7 +101,7 @@ const Project = async ({ params: { id } }: { params: { id: string } }) => {
         <Link href={renderLink()} className="min-w-[82px] h-[82px]">
           <Image
             src={projectDetails?.createdBy?.avatarUrl}
-            className="rounded-full"
+            className="rounded-full w-[82px] h-[82px]"
             width={82}
             height={82}
             alt="profile image"

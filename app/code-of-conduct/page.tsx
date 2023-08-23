@@ -2,7 +2,7 @@ import React from "react";
 
 const Conduct = () => {
   return (
-    <section className="flex-start flex-col paddings mb-16">
+    <section className="flex-start flex-col paddings mb-16 font-opensans">
       <p className="text-4xl font-semibold">Code of Conduct</p>
       <p className="text-lg pt-6">Let&apos;s keep this simple.</p>
       <ol className="list-decimal paddings pt-16 text-2xl">
