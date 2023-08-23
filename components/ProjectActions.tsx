@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import LoadingSpinner from "./LoadingSpinner";
 
 const ProjectActions = ({ projectId }: { projectId: string }) => {
   const router = useRouter();
@@ -24,6 +25,7 @@ const ProjectActions = ({ projectId }: { projectId: string }) => {
 
   return (
     <>
+      {isDeleting && <LoadingSpinner />}
       <Link
         href={`/edit-project/${projectId}`}
         className="flexCenter edit-action_btn"

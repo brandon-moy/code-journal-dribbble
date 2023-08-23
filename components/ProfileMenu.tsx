@@ -7,6 +7,38 @@ import { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { SessionInterface } from "@/common.types";
 
+const ProfileImage = ({
+  session,
+  width,
+  height,
+}: {
+  session: SessionInterface;
+  width: string;
+  height: string;
+}) => {
+  if (session?.user?.avatarUrl) {
+    return (
+      <Image
+        src={session?.user?.avatarUrl}
+        className={`rounded-full ${width} ${height}`}
+        width={80}
+        height={80}
+        alt="profile Image"
+      />
+    );
+  } else if (session?.user?.image) {
+    return (
+      <Image
+        src={session?.user?.image}
+        className="rounded-full"
+        width={80}
+        height={80}
+        alt="profile Image"
+      />
+    );
+  }
+};
+
 const ProfileMenu = ({ session }: { session: SessionInterface }) => {
   const [openModal, setOpenModal] = useState(false);
 
@@ -17,15 +49,7 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
           className="flexCenter"
           onMouseEnter={() => setOpenModal(true)}
         >
-          {session?.user?.image && (
-            <Image
-              src={session.user.image}
-              width={40}
-              height={40}
-              className="rounded-full"
-              alt="user profile image"
-            />
-          )}
+          <ProfileImage session={session} width="w-[60px]" height="h-[60px]" />
         </Menu.Button>
 
         <Transition
@@ -44,30 +68,18 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
             onMouseLeave={() => setOpenModal(false)}
           >
             <div className="flex flex-col items-center gap-y-4">
-              {session?.user?.image && (
-                <Image
-                  src={session?.user?.image}
-                  className="rounded-full"
-                  width={80}
-                  height={80}
-                  alt="profile Image"
-                />
-              )}
+              <ProfileImage
+                session={session}
+                width="w-[80px]"
+                height="h-[80px]"
+              />
               <p className="font-semibold">{session?.user?.name}</p>
             </div>
 
             <div className="flex flex-col gap-3 pt-10 items-start w-full">
               <Menu.Item>
                 <Link
-                  href={`/profile/${session?.user?.id}`}
-                  className="text-sm"
-                >
-                  Work Preferences
-                </Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link
-                  href={`/profile/${session?.user?.id}`}
+                  href={`/settings/${session?.user?.id}`}
                   className="text-sm"
                 >
                   Settings

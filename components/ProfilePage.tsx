@@ -18,24 +18,32 @@ const ProfilePage = ({ user }: Props) => {
             src={user?.avatarUrl}
             width={100}
             height={100}
-            className="rounded-full"
+            className="rounded-full w-20 h-20"
             alt="user image"
           />
           <p className="text-4xl font-bold mt-10">{user?.name}</p>
-
-          {/* Possibly add a title section to user and allow user to change title */}
-          {/* <p className="md:text-5xl text-3xl font-extrabold md:mt-10 mt-5 max-w-lg">
-            I’m Software Engineer at JSM 👋
-          </p> */}
+          <p className="md:text-5xl text-3xl font-extrabold md:mt-10 mt-5 max-w-lg">
+            {user?.description}
+          </p>
 
           <div className="flex mt-8 gap-5 w-full flex-wrap">
             {user?.githubUrl && (
               <Link href={user?.githubUrl}>
                 <Button
                   title="GitHub"
-                  leftIcon="/plus-round.svg"
+                  leftIcon="/github.svg"
                   bgColor="bg-light-white-400 !w-max"
                   textColor="text-black-100"
+                />
+              </Link>
+            )}
+            {user?.linkedinUrl && (
+              <Link href={user?.linkedinUrl}>
+                <Button
+                  title="LinkedIn"
+                  leftIcon="/linkedin.png"
+                  bgColor="bg-[#007FBC] !w-max"
+                  textColor="text-white"
                 />
               </Link>
             )}

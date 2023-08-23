@@ -1,4 +1,4 @@
-import { ProjectForm } from "@/common.types";
+import { ProjectForm, UserForm } from "@/common.types";
 import { categoryFilters } from "@/constants";
 import {
   createProjectMutation,
@@ -7,8 +7,10 @@ import {
   getProjectByIdQuery,
   getProjectsOfUserQuery,
   getUserQuery,
+  projectCountQuery,
   projectsQuery,
   updateProjectMutation,
+  updateUserMutation,
 } from "@/graphql";
 import { GraphQLClient } from "graphql-request";
 
@@ -105,6 +107,11 @@ export const fetchAllProjects = (
   return makeGraphQLRequest(projectsQuery, { categories, endcursor });
 };
 
+export const fetchProjectCount = () => {
+  client.setHeader("x-api-key", apiKey);
+  return makeGraphQLRequest(projectCountQuery);
+};
+
 export const getProjectDetails = (id: string) => {
   client.setHeader("x-api-key", apiKey);
   return makeGraphQLRequest(getProjectByIdQuery, { id });
@@ -150,4 +157,36 @@ export const updateProject = async (
   };
 
   return makeGraphQLRequest(updateProjectMutation, variables);
+};
+
+export const updateUser = async (
+  user: UserForm,
+  userId: string,
+  token: string
+) => {
+  function isBase64DataURL(value: string) {
+    const base64Regex = /^data:image\/[a-z]+;base64,/;
+    return base64Regex.test(value);
+  }
+
+  let updatedUser = { ...user };
+
+  const isUploadingNewImage = isBase64DataURL(user.avatarUrl);
+
+  if (isUploadingNewImage) {
+    const imageUrl = await uploadImage(user.avatarUrl);
+
+    if (imageUrl.url) {
+      updatedUser = { ...updatedUser, avatarUrl: imageUrl.url };
+    }
+  }
+
+  client.setHeader("Authorization", `Bearer ${token}`);
+
+  const variables = {
+    id: userId,
+    input: updatedUser,
+  };
+
+  return makeGraphQLRequest(updateUserMutation, variables);
 };

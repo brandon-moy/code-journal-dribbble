@@ -1,7 +1,5 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 
 type Props = {
   id: string;
@@ -37,13 +35,14 @@ const ProjectCard = ({ id, image, title, name, avatarUrl, userId }: Props) => {
               src={avatarUrl}
               width={24}
               height={24}
-              className="rounded-full"
+              className="rounded-full w-[24px] h-[24px]"
               alt="Profil Image"
             />
             <p>{name}</p>
           </div>
         </Link>
-        <div className="flexCenter gap-3">
+        {/* Below is code for likes and views - to be added in future branch */}
+        {/* <div className="flexCenter gap-3">
           <div className="flexCenter gap-2">
             <Image src="/heart.svg" width={13} height={12} alt="Heart" />
             <p className="text-sm">500 likes</p>
@@ -52,7 +51,7 @@ const ProjectCard = ({ id, image, title, name, avatarUrl, userId }: Props) => {
             <Image src="/eye.svg" width={13} height={12} alt="Views" />
             <p className="text-sm">5k</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

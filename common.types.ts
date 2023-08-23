@@ -61,3 +61,12 @@ export interface ProjectForm {
   githubUrl: string;
   category: string;
 }
+
+export interface UserForm {
+  name: string;
+  email: string;
+  avatarUrl: string;
+  description: string;
+  githubUrl: string;
+  linkedinUrl: string;
+}

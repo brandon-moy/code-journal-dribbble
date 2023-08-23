@@ -1,9 +1,9 @@
-import Image from "next/image";
 import { fetchAllProjects } from "@/lib/actions";
 import { ProjectInterface } from "@/common.types";
 import ProjectCard from "@/components/ProjectCard";
 import Categories from "@/components/Categories";
 import LoadMore from "@/components/LoadMore";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 type ProjectSearch = {
   projectSearch: {
@@ -27,7 +27,6 @@ type Props = {
 };
 
 export const dynamic = "force-dynamic";
-export const dynamicParams = true;
 export const revalidate = 0;
 
 const Home = async ({ searchParams: { category, endCursor } }: Props) => {
