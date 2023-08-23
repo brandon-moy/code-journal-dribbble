@@ -45,7 +45,7 @@ const Footer = async () => {
           <Image src="/logo-purple.svg" width={115} height={38} alt="Logo" />
           <p className="text-start text-sm font-normal font-opensans mt-5 max-w-xs">
             Code Journal is a way for developer&apos;s to share, grow, and
-            connect with over developers to create a community and get hired.
+            connect with over developers.
           </p>
         </div>
         <div className="flex flex-wrap gap-12">
