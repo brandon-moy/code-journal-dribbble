@@ -25,6 +25,8 @@ export const footerLinks = [
     title: "For developers",
     links: [
       { title: "Explore development work", url: "/" },
+      { title: "Learn Development", url: "/learn" },
+      { title: "Project Ideas", url: "/project-ideas" },
       { title: "Code podcasts", url: "/podcasts" },
       { title: "Code of conduct", url: "/code-of-conduct" },
       { title: "Lorem Ipsum Dolor", url: "/lorem-ipsum-dolor" },
