@@ -41,17 +41,6 @@ const ProjectCard = ({ id, image, title, name, avatarUrl, userId }: Props) => {
             <p>{name}</p>
           </div>
         </Link>
-        {/* Below is code for likes and views - to be added in future branch */}
-        {/* <div className="flexCenter gap-3">
-          <div className="flexCenter gap-2">
-            <Image src="/heart.svg" width={13} height={12} alt="Heart" />
-            <p className="text-sm">500 likes</p>
-          </div>
-          <div className="flexCenter gap-2">
-            <Image src="/eye.svg" width={13} height={12} alt="Views" />
-            <p className="text-sm">5k</p>
-          </div>
-        </div> */}
       </div>
     </div>
   );

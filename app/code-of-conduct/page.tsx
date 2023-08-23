@@ -1,5 +1,3 @@
-import React from "react";
-
 const Conduct = () => {
   return (
     <section className="flex-start flex-col paddings mb-16 font-opensans">

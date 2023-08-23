@@ -1,5 +1,3 @@
-import React from "react";
-
 const LoremIpsumDolor = () => {
   return (
     <section className="flex-start flex-col paddings mb-16 font-opensans">

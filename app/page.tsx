@@ -3,7 +3,6 @@ import { ProjectInterface } from "@/common.types";
 import ProjectCard from "@/components/ProjectCard";
 import Categories from "@/components/Categories";
 import LoadMore from "@/components/LoadMore";
-import LoadingSpinner from "@/components/LoadingSpinner";
 
 type ProjectSearch = {
   projectSearch: {
