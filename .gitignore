@@ -34,3 +34,5 @@ grafbase/.env
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+extrastuff.txt

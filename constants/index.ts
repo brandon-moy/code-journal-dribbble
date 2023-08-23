@@ -2,8 +2,6 @@ export const NavLinks = [
   { href: "/project-ideas", key: "Project Ideas", text: "Project Ideas" },
   { href: "/", key: "Find Projects", text: "Find Projects" },
   { href: "/learn", key: "Learn Development", text: "Learn Development" },
-  // { href: "/", key: "Career Advancement", text: "Career Advancement" },
-  // { href: "/", key: "Hire Developers", text: "Hire Developers" },
 ];
 
 export const categoryFilters = [
@@ -26,52 +24,12 @@ export const footerLinks = [
   {
     title: "For developers",
     links: [
-      // "Go Pro!",
       { title: "Explore development work", url: "/" },
-      // "Development blog",
       { title: "Code podcasts", url: "/podcasts" },
-      // "Open-source projects",
-      // "Refer a Friend",
       { title: "Code of conduct", url: "/code-of-conduct" },
       { title: "Lorem Ipsum Dolor", url: "/lorem-ipsum-dolor" },
     ],
   },
-  // {
-  //   title: "Hire developers",
-  //   links: [
-  //     "Post a job opening",
-  //     "Post a freelance project",
-  //     "Search for developers",
-  //   ],
-  // },
-  // {
-  //   title: "Brands",
-  //   links: ["Advertise with us"],
-  // },
-  // {
-  //   title: "Company",
-  //   links: [
-  //     "About",
-  //     "Careers",
-  //     "Support",
-  //     "Media kit",
-  //     "Testimonials",
-  //     "API",
-  //     "Terms of service",
-  //     "Privacy policy",
-  //     "Cookie policy",
-  //   ],
-  // },
-  // {
-  //   title: "Directories",
-  //   links: [
-  //     "Development jobs",
-  //     "Developers for hire",
-  //     "Freelance developers for hire",
-  //     "Tags",
-  //     "Places",
-  //   ],
-  // },
   {
     title: "Development assets",
     links: [
@@ -87,17 +45,6 @@ export const footerLinks = [
       { title: "Packagephobia", url: "https://packagephobia.com/" },
     ],
   },
-  // {
-  //   title: "Development Resources",
-  //   links: [
-  //     "Freelancing",
-  //     "Development Hiring",
-  //     "Development Portfolio",
-  //     "Development Education",
-  //     "Creative Process",
-  //     "Development Industry Trends",
-  //   ],
-  // },
 ];
 
 export const podcasts = [

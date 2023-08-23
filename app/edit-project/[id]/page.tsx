@@ -19,7 +19,7 @@ const EditProject = async ({ params: { id } }: { params: { id: string } }) => {
 
   return (
     <Modal>
-      <h3 className="modal-head-text">Edit Project</h3>
+      <h3 className="modal-head-text font-opensans">Edit Project</h3>
 
       <ProjectForm type="edit" session={session} project={result?.project} />
     </Modal>

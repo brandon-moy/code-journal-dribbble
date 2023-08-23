@@ -4,7 +4,7 @@ import { practiceResources } from "@/constants";
 
 const LearnDevelopment = () => {
   return (
-    <section className="flex-start flex-col paddings mb-16">
+    <section className="flex-start flex-col paddings mb-16 font-opensans">
       <p className="text-4xl font-semibold">Learning Resources</p>
       <ResourceList resources={learningResources} />
       <ResourceList resources={practiceResources} />

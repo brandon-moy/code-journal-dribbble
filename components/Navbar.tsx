@@ -9,7 +9,7 @@ const Navbar = async () => {
   const session = await getCurrentUser();
   return (
     <nav className="flexBetween navbar bg-primary-purple">
-      <div className="flex-1 flexStart gap-10">
+      <div className="flex-1 flexStart font-opensans gap-10">
         <Link href="/">
           <Image
             src="/logo-white.svg"
