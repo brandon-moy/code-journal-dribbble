@@ -126,7 +126,7 @@ export const podcasts = [
   {
     title: "Front End Happy Hour",
     url: "https://www.frontendhappyhour.com/",
-    imageUrl: "/front-end-happy-hour.png",
+    imageUrl: "/frontend-happyhour.png",
     description:
       "A podcast featuring a panel of Software Engineers from Netflix, Evernote, Atlassian & LinkedIn talking over drinks about all things Front End development.",
   },

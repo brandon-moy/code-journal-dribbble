@@ -1,34 +1,105 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Code Journal
+
+A full-stack web application for users to share and discover projects from fellow developers.
+
+## 🤔 Why I built this?
+
+While assisting teaching the LearningFuze, a full-immersion web development bootcamp, the first major project we have the students create is a simple "Code Journal." It is a CRUD application for users to add journal entries to. I wanted to create a more in-depth project in order to show students a similar application that is more developed using the CRUD operations in a design that they are more familiar with. While they may not be able to understand everything happening, it was a great way to show and inspire them to build great applications in the future.
+
+### 🔗 Live Demo
+
+Try out the application live <a href="https://code-journal.brandonmoy.com/">here</a>!
+
+## 💻 Technologies Used
+
+- Next13
+- React
+- TailwindCSS
+- JavaScript
+- JSX
+- Google Cloud Console (for authorization)
+- Grafbase/GraphQL
+- TypeScript
+- Cloudinary
+
+## Features
+
+- Users can sign in/up using their Google accounts
+- Users can create an entry
+- Users can view a list of entries
+- Users can edit their entries
+- Users can delete their entries
+- Users can view a specific entries details
+- Users can view more projects from the project creator on the details page
+- Users can filter projects on the home page
+- Users can view a user profile
+- Users can update their account's image, GitHub url, and LinkedIn url
+
+## Preview
+
+### Users can create an entry, view a specific entries details, and view more projects from the project creator.
+
+![Create, View details, View more projects](/public/add-and-view.gif "Creating, viewing details, and viewing more projects")
+
+### Users can filter projects on the home page by category
+
+![Filter projects](/public/category-filters.gif "Filtering projects by category")
+
+### Users can view a profile page and update their profile settings
+
+![User profile and settings](/public/user-settings-and-profile.gif "User profile and settings")
 
 ## Getting Started
 
-First, run the development server:
+### Things you will need:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+- Cloudinary account (for image storing)
+- Google Cloud account (for user account sign up/sign in)
+- Grafbase account (our database)
+
+1. Clone the repository
+
+```
+git clone https://github.com/brandon-moy/code-journal-dribbble.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies with Node Package Manager
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Copy the .env files from the .env.example in the root and the grafbase directory
 
-## Learn More
+```
+cp .env.example .env
+cd grafbase
+cp .env.example .env
+cd ..
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Update the TOKEN secrets!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **NEXT_PUBLIC_GRAFBASE_API_URL/ NEXT_PUBLIC_GRAFBASE_API_KEY** from Grafbase
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **GOOGLE_CLIENT_ID/GOOGLE_CLIENT_SECRET** from Google Cloud
 
-## Deploy on Vercel
+- **NEXTAUTH_SECRET** - create a secret! For extra security consider using something like https://www.cryptool.org/en/cto/openssl and run `openssl rand -base64 32` to create a random base64 string.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **CLOUDINARY_NAME, CLOUDINARY_KEY, and CLOUDINARY_SECRET** from Cloudinary
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- The **NEXTAUTH_SECRET** in grafbase directory should be the same as this **NEXTAUTH_SECRET**.
+
+5. Start up the development server
+
+```
+npm run dev
+```
+
+6. Start the database in a new terminal and double check that the apiUrl in lib/actions.ts matches what grafbase provides you (it should be the same)
+
+```
+npx grafbase dev
+```
+
+7. Open the project in the browser at localhost:3000!
