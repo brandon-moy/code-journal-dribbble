@@ -35,6 +35,20 @@ Try out the application live <a href="https://code-journal.brandonmoy.com/">here
 - Users can view a user profile
 - Users can update their account's image, GitHub url, and LinkedIn url
 
+## Preview
+
+### Users can create an entry, view a specific entries details, and view more projects from the project creator.
+
+![Create, View details, View more projects](/public/add-and-view.gif "Creating, viewing details, and viewing more projects")
+
+### Users can filter projects on the home page by category
+
+![Filter projects](/public/category-filters.gif "Filtering projects by category")
+
+### Users can view a profile page and update their profile settings
+
+![User profile and settings](/public/user-settings-and-profile.gif "User profile and settings")
+
 ## Getting Started
 
 ### Things you will need:
