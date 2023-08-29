@@ -4,7 +4,7 @@ A full-stack web application for users to share and discover projects from fello
 
 ## 🤔 Why I built this?
 
-While assisting teaching the LearningFuze, a full-immersion web development bootcamp, the first major project we have the students create is a simple "Code Journal." It is a CRUD application for users to add journal entries to. I wanted to create a more in-depth project in order to show students a similar application that is more developed using the CRUD operations in a design that they are more familiar with. While they may not be able to understand everything happening, it was a great way to show and inspire them to build great applications in the future.
+While working and teaching at LearningFuze, a full-immersion web development bootcamp, the first major project we have the students create is a simple "Code Journal," an application where users perform CRUD operations on entries. I wanted to create a more in-depth project in order to show students a similar application that is more developed using the CRUD operations in a design that they are more familiar with. While they may not be able to understand everything happening, it was a great way to show and inspire them to build great applications in the future.
 
 ### 🔗 Live Demo
 
